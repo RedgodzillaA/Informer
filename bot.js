@@ -6,11 +6,6 @@ const Discord = require("discord.js");
 // this is what we're refering to. Your client.
 const client = new Discord.Client();
 
-// Here we load the config.json file that contains our token and our prefix values. 
-const config = require("./config.json");
-// config.token contains the bot's token
-// config.prefix contains the message prefix.
-
 /////////////////////////////////////////
 //////STEP 1. Notification for Bot///////
 /////////////////////////////////////////
@@ -104,4 +99,4 @@ client.on("guildMemberRemove", member => {
 
 //////////////////END STEP 3/////////////////////////
 	
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);//where BOT_TOKEN is the token of our bot add in Heroku
